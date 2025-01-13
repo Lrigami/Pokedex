@@ -255,12 +255,6 @@ function displayPokemon(pokemon, pokemonHW) {
   pokemonImage.setAttribute("alt", `${pokemon.name}`);
   pokemonSprite.setAttribute("src", `${pokemon.sprite}`);
   pokemonSprite.setAttribute("alt", `${pokemon.name}`);
-  pokemonImage.onerror = () => {
-    pokemonImage.src = "./erreur404.png";
-  }
-  pokemonSprite.onerror = () => {
-    pokemonSprite.src = "./erreur404.png";
-  }
 
   pokemonHeight.innerText = ` ${pokemonHW.taille} cm`;
   pokemonWeight.innerText = ` ${pokemonHW.poids} kg`;
@@ -331,7 +325,6 @@ function displayTypesFilters() {
   pokemonStatistics.classList.add("hidden");
   filterResults.innerHTML = `<p>Choisissez un type&nbsp:</p>`;
   let listOfTypes = document.createElement("ul");
-  listOfTypes.setAttribute("id", "list-of-types");
   types.forEach((type) => {
     let typeElement = document.createElement("li");
     let typeBtn = document.createElement("button");
@@ -364,7 +357,6 @@ function filterByType(btn) {
 function displayTypeFilter() {
   let listOfFilteredPkm = "";
   listOfFilteredPkm = document.createElement("ul");
-  listOfFilteredPkm.setAttribute("class", "list-of-filtered-pkm");
 
   listOfFilteredPkmArray.forEach((pokemon) => {
     let filteredPokemon = document.createElement("li");
@@ -401,7 +393,7 @@ function displayTypeFilter() {
 function displayStatFilter(stat) {
   let listOfFilteredPkm = "";
   listOfFilteredPkm = document.createElement("ul");
-  listOfFilteredPkm.setAttribute("class", "list-of-filtered-pkm");
+  listOfFilteredPkm.setAttribute("id", "filtered-pkm-list");
 
   listOfFilteredPkmArray.forEach((pokemon) => {
     let filteredPokemon = document.createElement("li");
