@@ -46,6 +46,7 @@ body {
     overflow-x: hidden;
     font-family: var(--font), Arial, Helvetica, sans-serif;
     margin-bottom: 30px;
+    background-color: white;
 }
 
 button {
